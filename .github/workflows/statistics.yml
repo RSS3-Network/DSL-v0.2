@@ -1,0 +1,29 @@
+name: "RSS3 Data Statistics"
+
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  statistics:
+    runs-on: ubuntu-latest
+    name: RSS3 Data Statistics
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: Run statistics
+        run: node scripts/statistics.js
+      - name: Commit
+        run: |
+          git config --global user.name "RSS3 bot"
+          git config --global user.email "contact@rss3.io"
+          git add -A
+          git commit -m ":zap: auto update rss3 statistics"
+          git push

@@ -25,5 +25,5 @@ jobs:
           git config --global user.name "RSS3 bot"
           git config --global user.email "contact@rss3.io"
           git add -A
-          git commit -m ":zap: auto update rss3 statistics"
+          git commit --allow-empty -m ":zap: auto update rss3 statistics"
           git push

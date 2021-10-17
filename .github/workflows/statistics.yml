@@ -1,6 +1,7 @@
 name: "RSS3 Data Statistics"
 
 concurrency:
+  group: statistics
   cancel-in-progress: true
 
 on:

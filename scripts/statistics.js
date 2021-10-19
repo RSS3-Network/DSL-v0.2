@@ -50,13 +50,19 @@ fs.readdirSync('./storage').forEach((fileName) => {
             // assets
             file.assets?.forEach((asset) => {
                 if (!overall.assets[asset.platform]) {
-                    overall.assets[asset.platform] = 0;
+                    overall.assets[asset.platform] = {};
                 }
                 if (!details[fileName].assets[asset.platform]) {
-                    details[fileName].assets[asset.platform] = 0;
+                    details[fileName].assets[asset.platform] = {};
                 }
-                overall.assets[asset.platform]++;
-                details[fileName].assets[asset.platform] ++;
+                if (!overall.assets[asset.platform][asset.type]) {
+                    overall.assets[asset.platform][asset.type] = 0;
+                }
+                if (!details[fileName].assets[asset.platform][asset.type]) {
+                    details[fileName].assets[asset.platform][asset.type] = 0;
+                }
+                overall.assets[asset.platform][asset.type]++;
+                details[fileName].assets[asset.platform][asset.type]++;
             });
 
             // accounts

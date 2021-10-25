@@ -20,8 +20,8 @@ jobs:
           node-version: '14'
       - name: Run statistics
         run: node scripts/statistics.js
-#      - name: Grab History
-#        run: sh scripts/calc-history-statics.sh
+      # - name: Grab History
+        # run: sh scripts/calc-history-statics.sh
       - name: Commit
         run: |
           git config --global user.name "RSS3 bot"

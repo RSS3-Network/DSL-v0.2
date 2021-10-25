@@ -84,3 +84,13 @@ fs.readdirSync('./storage').forEach((fileName) => {
 
 fs.writeFileSync('./statistics/overall.json', JSON.stringify(overall));
 fs.writeFileSync('./statistics/details.json', JSON.stringify(details));
+
+
+// Just do the increment changes (full history grab is time-consuming)
+try {
+    const historyData = JSON.parse(fs.readFileSync('./statistics/history.json'));
+    historyData[new Date().toISOString()] = overall;
+    fs.writeFileSync('./statistics/history.json', JSON.stringify(historyData));
+} catch (error) {
+    console.error(`Error: ${error}`);
+}

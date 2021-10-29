@@ -13,5 +13,6 @@ Various integration or statistics ideas are welcomed
 
 Related Projects
 
+- [RSS3](https://github.com/NaturalSelectionLabs/RSS3)
 - [Web3Pass](https://github.com/NaturalSelectionLabs/Web3Pass)
 - [RSS3 Dashboard](https://github.com/NaturalSelectionLabs/RSS3-Dashboard)

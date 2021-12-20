@@ -77,7 +77,7 @@ fs.readdirSync('./storage').forEach((fileName) => {
                 details[fileName].accounts[account.platform]++;
             });
         } catch (error) {
-            console.error(`Error: ${file} ${error}`);
+            console.error(`Error: fileName: ${fileName} content: ${content} error: ${error}`);
         }
     }
 });
